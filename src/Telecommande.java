@@ -4,7 +4,7 @@ public class Telecommande {
     private ArrayList<Lampe> lampes ;
 
     public Telecommande(){
-        this.lampes = new ArrayList<Lampe>() ;
+        this.lampes = new ArrayList<>() ;
     }
 
     public void ajouterLampe(Lampe lampe){
@@ -21,5 +21,14 @@ public class Telecommande {
 
     public void activerTout(){
         throw new Error("code non écrit") ;
+    }
+
+    @Override
+    public String toString() {
+        throw new Error("code non écrit") ;
+    }
+
+    public ArrayList<Lampe> getLampes() {
+        return this.lampes;
     }
 }
