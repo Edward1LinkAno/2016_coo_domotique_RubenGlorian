@@ -31,4 +31,8 @@ public class Telecommande {
     public ArrayList<Lampe> getLampes() {
         return this.lampes;
     }
+
+    public Lampe getLampe(int pos){
+        return this.lampes.get(pos) ;
+    }
 }
