@@ -8,12 +8,12 @@ public class AdapterCheminee implements Appareils {
 
     @Override
     public void allumer() {
-        ...
+        this.cheminee.changerIntensite(this.cheminee.getLumiere()+10);
     }
 
     @Override
     public void eteindre() {
-        this.cheminee
+        this.cheminee.changerIntensite(0) ;
     }
 
     @Override
