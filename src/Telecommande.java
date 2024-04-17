@@ -1,58 +1,44 @@
 import java.util.ArrayList;
 
 public class Telecommande {
-    private ArrayList<Lampe> lampes ;
-    private ArrayList<Hifi> hifis ;
+    private ArrayList<Appareils> appareils ;
 
     public Telecommande(){
-        this.lampes = new ArrayList<>() ;
-        this.hifis = new ArrayList<>() ;
+        this.appareils = new ArrayList<>() ;
     }
 
-    public void ajouterLampe(Lampe lampe){
-        this.lampes.add(lampe) ;
+    public void ajouterAppareil(Appareils appareil){
+        this.appareils.add(appareil) ;
     }
 
-    public void ajouterHifi(Hifi hifi){
-        this.hifis.add(hifi) ;
+    public void activerAppareil(int indiceAppareil){
+        this.appareils.get(indiceAppareil).allumer() ;
     }
 
-    public void activerLampe(int indiceLampe){
-        this.lampes.get(indiceLampe).allumer() ;
-    }
-
-    public void activerHfi(int indiceHifi){
-        this.hifis.get(indiceHifi).allumer() ;
-    }
-
-    public void desactiverLampe(int indiceLampe){
-        this.lampes.get(indiceLampe).eteindre() ;
-    }
-
-    public void desactiverHifi(int indiceHifi){
-        this.hifis.get(indiceHifi).eteindre() ;
+    public void desactiverAppareil(int indiceAppareil){
+        this.appareils.get(indiceAppareil).eteindre() ;
     }
 
     public void activerTout(){
-        for (Lampe l : this.lampes) {
-            l.allumer();
+        for (Appareils a : this.appareils) {
+            a.allumer();
         }
     }
 
     @Override
     public String toString() {
         String s = "Lampes :\n" ;
-        for (Lampe l : this.lampes) {
-            s += l.toString()+"\n" ;
+        for (Appareils a : this.appareils) {
+            s += a.toString()+"\n" ;
         }
         return s ;
     }
 
-    public ArrayList<Lampe> getLampes() {
-        return this.lampes;
+    public ArrayList<Appareils> getAppareils() {
+        return this.appareils;
     }
 
-    public Lampe getLampe(int pos){
-        return this.lampes.get(pos) ;
+    public Appareils getAppareil(int pos){
+        return this.appareils.get(pos) ;
     }
 }

@@ -16,9 +16,9 @@ public class TelecommandeTest {
         ArrayList<Lampe> attendu = new ArrayList<>() ;
         attendu.add(l) ;
         //methode a tester
-        tel.ajouterLampe(l);
+        tel.ajouterAppareil(l);
         //verification
-        assertEquals(attendu,tel.getLampes(),"La liste de tel devrait monter la lampe l.");
+        assertEquals(attendu,tel.getAppareils(),"La liste de tel devrait monter la lampe l.");
     }
 
     @Test
@@ -30,11 +30,11 @@ public class TelecommandeTest {
         ArrayList<Lampe> attendu = new ArrayList<>() ;
         attendu.add(l2) ;
         attendu.add(l) ;
-        tel.ajouterLampe(l2) ;
+        tel.ajouterAppareil(l2); ;
         //methode a tester
-        tel.ajouterLampe(l);
+        tel.ajouterAppareil(l);
         //verification
-        assertEquals(attendu,tel.getLampes(),"La liste de tel devrait monter les lampe l et l2.");
+        assertEquals(attendu,tel.getAppareils(),"La liste de tel devrait monter les lampe l et l2.");
     }
 
     @Test
@@ -42,11 +42,11 @@ public class TelecommandeTest {
         //preparation
         Telecommande tel = new Telecommande() ;
         Lampe l = new Lampe("lampe") ;
-        tel.ajouterLampe(l);
+        tel.ajouterAppareil(l);
         //methode a tester
-        tel.activerLampe(0);
+        tel.activerAppareil(0);
         //verification
-        assertTrue(tel.getLampe(0).isAllume(), "La lampe en position 0 devrait être allumée.");
+        assertTrue(l.isAllume(), "La lampe en position 0 devrait être allumée.");
     }
 
     @Test
@@ -55,12 +55,12 @@ public class TelecommandeTest {
         Telecommande tel = new Telecommande() ;
         Lampe l = new Lampe("lampe") ;
         Lampe l2 = new Lampe("Lampe2") ;
-        tel.ajouterLampe(l);
-        tel.ajouterLampe(l2);
+        tel.ajouterAppareil(l);
+        tel.ajouterAppareil(l2);
         //methode a tester
-        tel.activerLampe(1);
+        tel.activerAppareil(1);
         //verification
-        assertTrue(tel.getLampe(1).isAllume(), "La lampe en position 1 devrait être allumée.");
+        assertTrue(l2.isAllume(), "La lampe en position 1 devrait être allumée.");
     }
 
     @Test
@@ -68,8 +68,8 @@ public class TelecommandeTest {
         //preparation
         Telecommande tel = new Telecommande() ;
         Lampe l = new Lampe("lampe") ;
-        tel.ajouterLampe(l);
+        tel.ajouterAppareil(l);
         //methode a tester et verification
-        IndexOutOfBoundsException exception = assertThrows(IndexOutOfBoundsException.class, () -> {tel.activerLampe(1) ;}, "La lampe en position 1 ne devrait pas exister.");
+        IndexOutOfBoundsException exception = assertThrows(IndexOutOfBoundsException.class, () -> {tel.activerAppareil(1); ;}, "La lampe en position 1 ne devrait pas exister.");
     }
 }

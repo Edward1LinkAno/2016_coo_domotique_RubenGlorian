@@ -1,4 +1,4 @@
-public class Television {
+public class Television implements Appareils {
     private int son = 0;
     
     public void allumer() {
@@ -15,7 +15,7 @@ public class Television {
 
     public String toString() {
         String r = "";
-        r += "Hifi:" + son;
+        r += "Télévision : " + son;
         return (r);
     }
 }

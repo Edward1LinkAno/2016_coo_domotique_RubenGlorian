@@ -5,7 +5,7 @@
  * prive et manipulable par les methodes allumer et eteindre
  */
 
-public class Lampe {
+public class Lampe implements Appareils {
 
 	/**
 	 * nom de la lampe
@@ -52,7 +52,7 @@ public class Lampe {
 		} else {
 			r = "Off";
 		}
-		return (nom + ": " + r);
+		return (nom + " : " + r);
 	}
 
 	/**
